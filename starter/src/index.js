@@ -1,59 +1,58 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const pizzaData = [
-  {
-    name: "Focaccia",
-    ingredients: "Bread with italian olive oil and rosemary",
-    price: 6,
-    photoName: "pizzas/focaccia.jpg",
-    soldOut: false,
-  },
-  {
-    name: "Pizza Margherita",
-    ingredients: "Tomato and mozarella",
-    price: 10,
-    photoName: "pizzas/margherita.jpg",
-    soldOut: false,
-  },
-  {
-    name: "Pizza Spinaci",
-    ingredients: "Tomato, mozarella, spinach, and ricotta cheese",
-    price: 12,
-    photoName: "pizzas/spinaci.jpg",
-    soldOut: false,
-  },
-  {
-    name: "Pizza Funghi",
-    ingredients: "Tomato, mozarella, mushrooms, and onion",
-    price: 12,
-    photoName: "pizzas/funghi.jpg",
-    soldOut: false,
-  },
-  {
-    name: "Pizza Salamino",
-    ingredients: "Tomato, mozarella, and pepperoni",
-    price: 15,
-    photoName: "pizzas/salamino.jpg",
-    soldOut: true,
-  },
-  {
-    name: "Pizza Prosciutto",
-    ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
-    price: 18,
-    photoName: "pizzas/prosciutto.jpg",
-    soldOut: false,
-  },
-];
+// const pizzaData = [
+//   {
+//     name: "Focaccia",
+//     ingredients: "Bread with italian olive oil and rosemary",
+//     price: 6,
+//     photoName: "pizzas/focaccia.jpg",
+//     soldOut: false,
+//   },
+//   {
+//     name: "Pizza Margherita",
+//     ingredients: "Tomato and mozarella",
+//     price: 10,
+//     photoName: "pizzas/margherita.jpg",
+//     soldOut: false,
+//   },
+//   {
+//     name: "Pizza Spinaci",
+//     ingredients: "Tomato, mozarella, spinach, and ricotta cheese",
+//     price: 12,
+//     photoName: "pizzas/spinaci.jpg",
+//     soldOut: false,
+//   },
+//   {
+//     name: "Pizza Funghi",
+//     ingredients: "Tomato, mozarella, mushrooms, and onion",
+//     price: 12,
+//     photoName: "pizzas/funghi.jpg",
+//     soldOut: false,
+//   },
+//   {
+//     name: "Pizza Salamino",
+//     ingredients: "Tomato, mozarella, and pepperoni",
+//     price: 15,
+//     photoName: "pizzas/salamino.jpg",
+//     soldOut: true,
+//   },
+//   {
+//     name: "Pizza Prosciutto",
+//     ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
+//     price: 18,
+//     photoName: "pizzas/prosciutto.jpg",
+//     soldOut: false,
+//   },
+// ];
 
 function App() {
   return (
     <div>
       <h1>Hello React! I am here! </h1>
       <Header />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Menu />
+      <Footer />
     </div>
   );
 }
@@ -62,16 +61,83 @@ function Header() {
   return <h1>Fast React Pizza Co.</h1>;
 }
 
-function Menu() {}
+function Menu() {
+  return (
+    <div>
+      <h2> Our menu</h2>
+      <PizzaMargherita />
+      <PizzaSpinaci />
+      <PizzaFunghi />
+      <PizzaSalamino />
+      <PizzaProsciutto />
+      <Focaccia />
+    </div>
+  );
+}
 
-function Footer() {}
+function Footer() {
+  return (
+    <footer>{new Date().toLocaleTimeString()}. We're currently open</footer>
+  );
+  // return React.createElement("footer", null, "We're currently open");
+}
 
-function Pizza() {
+function PizzaMargherita() {
+  return (
+    <div>
+      <img src="pizzas/margherita.jpg" alt="Pizza margherita name" />
+      <h2>Pizza Margherita</h2>
+      <p>Tomato and mozarella</p>
+    </div>
+  );
+}
+
+function PizzaSpinaci() {
   return (
     <div>
       <img src="pizzas/spinaci.jpg" alt="Pizza spinaci name" />
       <h2>Pizza Spinaci</h2>
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
+    </div>
+  );
+}
+
+function PizzaFunghi() {
+  return (
+    <div>
+      <img src="pizzas/funghi.jpg" alt="Pizza funghi name" />
+      <h2>Pizza Funghi</h2>
+      <p>Tomato, mozarella, mushrooms, and onion</p>
+    </div>
+  );
+}
+
+function PizzaSalamino() {
+  return (
+    <div>
+      <img src="pizzas/salamino.jpg" alt="Pizza salamino name" />
+      <h2>Pizza Salamino</h2>
+      <p>Tomato, mozarella, and pepperoni</p>
+    </div>
+  );
+}
+
+function PizzaProsciutto() {
+  return (
+    <div>
+      <img src="pizzas/prosciutto.jpg" alt="Pizza prosciutto name" />
+      <h2>Pizza Prosciutto</h2>
+      <p>Tomato, mozarella, ham, aragula, and burrata cheese</p>
+    </div>
+  );
+}
+
+function Focaccia() {
+  return (
+    <div>
+      <img src="pizzas/focaccia.jpg" alt="Focaccia name" />
+      <h2>Focaccia</h2>
+      <p>Bread with italian olive oil and rosemary</p>
     </div>
   );
 }
