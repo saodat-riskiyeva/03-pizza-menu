@@ -74,13 +74,56 @@ function Menu() {
   return (
     <main className="menu">
       <h2> Our menu</h2>
-      <PizzaMargherita />
-      <PizzaSpinaci />
-      <PizzaFunghi />
-      <PizzaSalamino />
-      <PizzaProsciutto />
-      <Focaccia />
+      <Pizza
+        name="Pizza Margherita"
+        ingredients="Tomato and mozarella"
+        photoName="pizzas/margherita.jpg"
+        price={12}
+      />
+      <Pizza
+        name="Pizza Spinaci"
+        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
+        photoName="pizzas/spinaci.jpg"
+        price={12}
+      />
+      <Pizza
+        name="Pizza Funghi"
+        ingredients="Tomato, mozarella, mushrooms, and onion"
+        photoName="pizzas/funghi.jpg"
+        price={12}
+      />
+      <Pizza
+        name="Pizza Salamino"
+        ingredients="Tomato, mozarella, and pepperoni"
+        photoName="pizzas/salamino.jpg"
+        price={15}
+      />
+      <Pizza
+        name="Pizza Prosciutto"
+        ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
+        photoName="pizzas/prosciutto.jpg"
+        price={18}
+      />
+      <Pizza
+        name="Pizza Focaccia"
+        ingredients="Bread with italian olive oil and rosemary"
+        photoName="pizzas/focaccia.jpg"
+        price={6}
+      />
     </main>
+  );
+}
+
+function Pizza(props) {
+  return (
+    <div className="pizza">
+      <img src={props.photoName} alt={props.name} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+        <span>{props.price}</span>
+      </div>
+    </div>
   );
 }
 
@@ -102,65 +145,55 @@ function Footer() {
   // return React.createElement("footer", null, "We're currently open");
 }
 
-function PizzaMargherita() {
-  return (
-    <div>
-      <img src="pizzas/margherita.jpg" alt="Pizza margherita name" />
-      <h3>Pizza Margherita</h3>
-      <p>Tomato and mozarella</p>
-    </div>
-  );
-}
+// function PizzaSpinaci() {
+//   return (
+//     <div>
+//       <img src="pizzas/spinaci.jpg" alt="Pizza spinaci name" />
+//       <h3>Pizza Spinaci</h3>
+//       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
+//     </div>
+//   );
+// }
 
-function PizzaSpinaci() {
-  return (
-    <div>
-      <img src="pizzas/spinaci.jpg" alt="Pizza spinaci name" />
-      <h3>Pizza Spinaci</h3>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-    </div>
-  );
-}
+// function PizzaFunghi() {
+//   return (
+//     <div>
+//       <img src="pizzas/funghi.jpg" alt="Pizza funghi name" />
+//       <h3>Pizza Funghi</h3>
+//       <p>Tomato, mozarella, mushrooms, and onion</p>
+//     </div>
+//   );
+// }
 
-function PizzaFunghi() {
-  return (
-    <div>
-      <img src="pizzas/funghi.jpg" alt="Pizza funghi name" />
-      <h3>Pizza Funghi</h3>
-      <p>Tomato, mozarella, mushrooms, and onion</p>
-    </div>
-  );
-}
+// function PizzaSalamino() {
+//   return (
+//     <div>
+//       <img src="pizzas/salamino.jpg" alt="Pizza salamino name" />
+//       <h3>Pizza Salamino</h3>
+//       <p>Tomato, mozarella, and pepperoni</p>
+//     </div>
+//   );
+// }
 
-function PizzaSalamino() {
-  return (
-    <div>
-      <img src="pizzas/salamino.jpg" alt="Pizza salamino name" />
-      <h3>Pizza Salamino</h3>
-      <p>Tomato, mozarella, and pepperoni</p>
-    </div>
-  );
-}
+// function PizzaProsciutto() {
+//   return (
+//     <div>
+//       <img src="pizzas/prosciutto.jpg" alt="Pizza prosciutto name" />
+//       <h3>Pizza Prosciutto</h3>
+//       <p>Tomato, mozarella, ham, aragula, and burrata cheese</p>
+//     </div>
+//   );
+// }
 
-function PizzaProsciutto() {
-  return (
-    <div>
-      <img src="pizzas/prosciutto.jpg" alt="Pizza prosciutto name" />
-      <h3>Pizza Prosciutto</h3>
-      <p>Tomato, mozarella, ham, aragula, and burrata cheese</p>
-    </div>
-  );
-}
-
-function Focaccia() {
-  return (
-    <div>
-      <img src="pizzas/focaccia.jpg" alt="Focaccia name" />
-      <h3>Focaccia</h3>
-      <p>Bread with italian olive oil and rosemary</p>
-    </div>
-  );
-}
+// function Focaccia() {
+//   return (
+//     <div>
+//       <img src="pizzas/focaccia.jpg" alt="Focaccia name" />
+//       <h3>Focaccia</h3>
+//       <p>Bread with italian olive oil and rosemary</p>
+//     </div>
+//   );
+// }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
