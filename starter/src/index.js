@@ -76,11 +76,17 @@ function Menu() {
       <h2> Our menu</h2>
 
       {
-        <ul className="pizzas">
-          {pizzaData.map((pizzaListItem) => (
-            <Pizza pizzaObject={pizzaListItem} key={pizzaListItem.name} />
-          ))}
-        </ul>
+        <React.Fragment key="fragment">
+          <p>
+            Authentic Italian cuisine, 6 creative dishes to shoose from. All
+            from our stone oven, all organic, all delicious.
+          </p>
+          <ul className="pizzas">
+            {pizzaData.map((pizzaListItem) => (
+              <Pizza pizzaObject={pizzaListItem} key={pizzaListItem.name} />
+            ))}
+          </ul>
+        </React.Fragment>
       }
 
       {/* <Pizza
