@@ -137,19 +137,13 @@ function Footer() {
   const openHour = 12;
   const closeHour = 21;
   const isOpen = hour >= openHour && hour <= closeHour;
-
-  // const isClosed = null;
-
   // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
   // else alert("Sorry, we're closed!");
 
   return (
     <footer className="footer">
       {isOpen ? (
-        <div className="order">
-          <p>We're open untill {closeHour}:00. Come visit us or order online</p>
-          <button className="btn">Order</button>
-        </div>
+        <Order closeHour={closeHour} />
       ) : (
         <p> We're close now and will open at {openHour}:00</p>
       )}
@@ -158,6 +152,16 @@ function Footer() {
   // return React.createElement("footer", null, "We're currently open");
 }
 
+function Order(props) {
+  return (
+    <div className="order">
+      <p>
+        We're open untill {props.closeHour}:00. Come visit us or order online
+      </p>
+      <button className="btn">Order</button>
+    </div>
+  );
+}
 // function PizzaSpinaci() {
 //   return (
 //     <div>
